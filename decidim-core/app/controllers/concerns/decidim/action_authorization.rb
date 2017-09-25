@@ -22,7 +22,9 @@ module Decidim
       return if status.ok?
       raise Unauthorized if status.code == :invalid
 
-      redirect_to authorize_action_path_from_status(status, redirect_url)
+      method = status.handler_name
+
+      redirect_to authorize_action_path_for(method, redirect_url: redirect_url)
     end
 
     # Public: Returns the authorization object for an authorization.
@@ -44,24 +46,22 @@ module Decidim
     def authorize_action_path(action_name, redirect_url: nil)
       redirect_url ||= request.path
 
-      authorize_action_path_from_status(
-        action_authorization(action_name),
-        redirect_url: redirect_url
-      )
+      method = action_authorization(action_name).handler_name
+
+      authorize_action_path_for(method, redirect_url: redirect_url)
     end
 
-    # Public: Returns the authorization path for a failed authorization with
+    # Public: Returns the authorization path for an authorization method with
     # the populated redirect url.
     #
-    # status       - The status after an authorization check.
+    # method       - The authorization method to use.
     # redirect_url - The url to redirect to when finished.
     #
     # Returns a String.
-    def authorize_action_path_from_status(status, redirect_url: nil)
-      decidim.new_authorization_path(
-        handler: status.handler_name,
-        redirect_url: redirect_url
-      )
+    def authorize_action_path_for(method, redirect_url: nil)
+      Verifications::Adapter
+        .from_element(method)
+        .root_path(redirect_url: redirect_url)
     end
 
     def _action_authorizer(action_name)

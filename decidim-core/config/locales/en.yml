@@ -80,6 +80,7 @@ en:
       first_login:
         actions:
           decidim/dummy_authorization_handler: Verify against the example authorization
+          id_documents: Get verified by uploading your identity document
         title: Verify your identity
         verify_with_these_options: 'These are the available options to verify your identity:'
       new:

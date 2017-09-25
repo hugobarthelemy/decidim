@@ -38,7 +38,7 @@ module Decidim
                 it { is_expected.to eq("/authorizations/first_login") }
               end
 
-              context "otherwise", without_authorizations: true do
+              context "otherwise", without_handlers: true do
                 it { is_expected.to eq("/") }
               end
             end

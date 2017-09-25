@@ -42,7 +42,7 @@ describe "Authorizations", type: :feature, perform_enqueued: true do
     end
 
     context "when multiple authorizations have been configured" do
-      let(:authorizations) { ["Decidim::DummyAuthorizationHandler", "Decidim::DummyAuthorizationHandler"] }
+      let(:authorizations) { ["Decidim::DummyAuthorizationHandler", "id_documents"] }
 
       before do
         visit decidim.root_path
@@ -123,7 +123,7 @@ describe "Authorizations", type: :feature, perform_enqueued: true do
       end
     end
 
-    context "when no authorizations are configured", without_authorizations: true do
+    context "when no authorizations are configured", without_handlers: true do
       let(:authorizations) { [] }
 
       it "doesn't list authorizations" do

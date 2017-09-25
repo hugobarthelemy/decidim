@@ -1,0 +1,30 @@
+---
+en:
+  activemodel:
+    attributes:
+      id_document:
+        document_number: Document number (with letter)
+        document_type: Type of your document
+        scanned_copy: Scanned copy of your document
+        user: User
+  decidim:
+    authorization_handlers:
+      direct: Direct
+      id_documents:
+        name: Identity documents
+      multistep: Multi-Step
+    verifications:
+      id_documents:
+        dni: DNI
+        id_documents:
+          create:
+            error: There was a problem uploading your document
+            success: Document uploaded successfully
+          new:
+            send: Send
+            title: Upload your identity document
+        nie: NIE
+        passport: Passport
+  errors:
+    messages:
+      uppercase_only_letters_numbers: must be all uppercase and contain only letters and/or numbers
