@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-divider">
+    <h2 class="card-title">
+      <%= t(".title") %>
+    </h2>
+  </div>
+  <div class="card-section">
+    <table class="table-list">
+      <thead>
+        <tr>
+          <th><%= t("activemodel.attributes.id") %></th>
+          <th><%= t("activemodel.attributes.id_document.scanned_copy") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <% @id_documents.each do |document| %>
+            <td>
+              <%= link_to t(".verification_number", n: document.id), edit_id_document_path(document.id) %>
+            </td>
+            <td>
+              <%= link_to edit_id_document_path(document.id) do %>
+                <%= image_tag document.scanned_copy.url(:thumbnail), class: "thumbnail-list" %>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

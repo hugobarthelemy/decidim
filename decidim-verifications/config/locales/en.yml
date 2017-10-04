@@ -8,13 +8,28 @@ en:
         scanned_copy: Scanned copy of your document
         user: User
   decidim:
+    admin:
+      menu:
+        authorization_workflows: Verifications
     authorization_handlers:
       direct: Direct
       id_documents:
         name: Identity documents
       multistep: Multi-Step
+      name: Name
     verifications:
       id_documents:
+        admin:
+          id_documents:
+            edit:
+              introduce_user_data: Introduce the data in the picture
+              verify: Verify
+            index:
+              title: Pending verifications
+              verification_number: 'Verification #%{n}'
+            update:
+              error: Verification doesn't match. Try again or dismiss the verification
+              success: User successfully verified
         dni: DNI
         id_documents:
           create:
@@ -27,4 +42,5 @@ en:
         passport: Passport
   errors:
     messages:
+      does_not_match_user_information: does not match what the user introduced
       uppercase_only_letters_numbers: must be all uppercase and contain only letters and/or numbers

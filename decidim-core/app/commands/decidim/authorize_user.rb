@@ -19,13 +19,11 @@ module Decidim
     def call
       return broadcast(:invalid) unless handler.valid? && unique?
 
-      create_authorization
+      transaction { create_authorization }
       broadcast(:ok)
     end
 
-    private
-
-    attr_reader :handler
+    protected
 
     def create_authorization
       authorization = Authorization.find_or_initialize_by(
@@ -40,6 +38,10 @@ module Decidim
 
       authorization.save!
     end
+
+    private
+
+    attr_reader :handler
 
     def unique?
       return true if handler.unique_id.nil?
