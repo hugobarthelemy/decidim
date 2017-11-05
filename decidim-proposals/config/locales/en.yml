@@ -23,10 +23,12 @@ en:
             attachments_allowed: Allow attachments
             comments_enabled: Comments enabled
             geocoding_enabled: Geocoding enabled
+            maximum_votes_per_proposal: Maximum votes per proposal
             new_proposal_help_text: New proposal help text
             official_proposals_enabled: Official proposals enabled
             proposal_answering_enabled: Proposal answering enabled
-            vote_limit: Vote limit
+            proposal_limit: Proposal limit per user
+            vote_limit: Vote limit per user
           step:
             announcement: Announcement
             comments_blocked: Comments blocked
@@ -89,6 +91,8 @@ en:
             state: State
             title: Title
             votes: Votes
+      new:
+        limit_reached: You can't create new proposals since you've exceeded the limit.
       proposal_votes:
         create:
           error: There's been errors when voting the proposal.
@@ -127,8 +131,8 @@ en:
           view_proposal: View proposal
         linked_proposals:
           proposal_votes:
-            one: <span class="card--list__data__number">1</span>vote
-            other: <span class="card--list__data__number">%{count}</span>votes
+            one: vote
+            other: votes
         new:
           attachment_legend: "(Optional) Add an attachment"
           back: Back
@@ -144,10 +148,12 @@ en:
           view_proposal: View proposal
         show:
           proposal_accepted_reason: 'This proposal has been accepted because:'
+          proposal_in_evaluation_reason: This proposal is being evaluated
           proposal_rejected_reason: 'This proposal has been rejected because:'
           report: Report
         vote_button:
           already_voted: Already voted
+          maximum_votes_reached: Vote limit reached
           no_votes_remaining: No votes remaining
           vote: Vote
           votes_blocked: Voting disabled
@@ -155,11 +161,15 @@ en:
           count:
             one: VOTE
             other: VOTES
-        votes_limit:
+        voting_rules:
+          maximum_votes_per_proposal:
+            description: Each proposal can receive a maximum of %{limit} votes.
+          proposal_limit:
+            description: You can create up to %{limit} proposals.
+          title: 'Voting is subject to the following rules:'
           vote_limit:
             description: You can vote up to %{limit} proposals.
             left: Remaining
-            title: You have %{limit} votes to distribute
             votes: Votes
     resource_links:
       included_proposals:

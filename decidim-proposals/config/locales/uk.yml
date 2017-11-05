@@ -6,14 +6,14 @@ uk:
         category_id: Розділ
         scope_id: Терен
         title: Назва
-        user_group_id: Створити пропозицію як
+        user_group_id: Внести пропозицію як
       proposal_answer:
-        answer: Відповідь
+        answer: Відповісти
   decidim:
     features:
       proposals:
         actions:
-          create: Створити
+          create: Внести
           vote: Голосувати
         name: Пропозиції
         settings:
@@ -22,21 +22,23 @@ uk:
             attachments_allowed: Дозволити вкладення
             comments_enabled: Коментарі ввімкнено
             geocoding_enabled: Геокодування ввімкнено
+            maximum_votes_per_proposal: Максимальна кількість голосів на пропозицію
             new_proposal_help_text: Підказки зі створення нової пропозиції
             official_proposals_enabled: Офіційні пропозиції ввімкнені
             proposal_answering_enabled: Ввімкнуто відповіді на пропозиції
-            vote_limit: Гранична кількість голосів
+            proposal_limit: Максимальна кількість пропозицій на одного учасника
+            vote_limit: Максимальна кількість голосів для одного користувача
           step:
             announcement: Оголошення
-            comments_blocked: Коментарі заблоковано
+            comments_blocked: Коментарі вимкнено
             creation_enabled: Ввімкнено створення пропозицій
             proposal_answering_enabled: Ввімкнуто відповіді на пропозиції
-            votes_blocked: Голосування заблоковане
+            votes_blocked: Голосування вимкнене
             votes_enabled: Голосування ввімкнене
             votes_hidden: Голосування приховане (якщо голосування ввімкнене, то при галочці тут буде сховано кількість голосів)
     proposals:
       actions:
-        answer: Відповідь
+        answer: Відповісти
         new: Нова
         title: Дії
       admin:
@@ -51,33 +53,33 @@ uk:
         proposal_answers:
           edit:
             accepted: Прийнято
-            answer_proposal: Відповідь
+            answer_proposal: Відповісти
             evaluating: Розглядається
             rejected: Відхилено
             title: Відповідь на пропозицію %{title}
         proposals:
           answer:
             invalid: При спробі відповісти на цю пропозицію виникла проблема
-            success: Відповідь на пропозицію успішно опубліковано
+            success: Успішно дано відповідь на пропозицію
           create:
             invalid: При спробі створити цю пропозицію виникла проблема
-            success: Пропозицію успішно створено
+            success: Пропозицію успішно внесено
           form:
             attachment_legend: "(Необов'язково) Додати вкладений файл"
             select_a_category: Оберіть розділ
           index:
             title: Пропозиції
           new:
-            create: Створити
-            title: Створити пропозицію
+            create: Внести
+            title: Внести пропозицію
       answers:
         accepted: Прийнято
         evaluating: Розглядається
-        not_answered: Ще не отримало відгуків
+        not_answered: Без відповідей
         rejected: Відхилено
       create:
         error: При збереженні цієї пропозиції сталися помилки.
-        success: Пропозицію успішно створено.
+        success: Пропозицію успішно додано.
       models:
         proposal:
           fields:
@@ -87,6 +89,9 @@ uk:
             scope: Терен
             state: Стан
             title: Назва
+            votes: Голоси
+      new:
+        limit_reached: Ви не можете додавати нові пропозиції, оскільки ви перевищили ліміт.
       proposal_votes:
         create:
           error: При голосуванні пропозиції сталися помилки.
@@ -127,10 +132,10 @@ uk:
           view_proposal: Переглянути пропозицію
         linked_proposals:
           proposal_votes:
-            one: <span class="card--list__data__number">1</span> голос
-            few: <span class="card--list__data__number">%{count}</span> голоси
-            many: <span class="card--list__data__number">%{count}</span> голосів
-            other: <span class="card--list__data__number">%{count}</span> голосів
+            one: голосувати
+            few: голоси
+            many: голоси
+            other: голоси
         new:
           attachment_legend: "(Необов'язково) Додати вкладений файл"
           back: Назад
@@ -140,16 +145,18 @@ uk:
         orders:
           label: 'Впорядкувати пропозиції за:'
           most_voted: Найбільш підтримані
-          random: Випадково
+          random: Довільно
           recent: Нещодавні
         proposal:
           view_proposal: Переглянути пропозицію
         show:
           proposal_accepted_reason: 'Ця пропозиція була прийнята, тому що:'
+          proposal_in_evaluation_reason: Ця пропозиція розглядається
           proposal_rejected_reason: 'Ця пропозиція була відхилена, оскільки:'
-          report: Доповісти
+          report: Поскаржитись
         vote_button:
           already_voted: Вже проголосували
+          maximum_votes_reached: Використано всі голоси
           no_votes_remaining: Не залишилось голосів
           vote: Голосувати
           votes_blocked: Голосування вимкнене
@@ -159,13 +166,17 @@ uk:
             few: ГОЛОСИ
             many: ГОЛОСІВ
             other: ГОЛОСІВ
-        votes_limit:
+        voting_rules:
+          maximum_votes_per_proposal:
+            description: Кожна пропозиція може отримати максимум %{limit} голосів.
+          proposal_limit:
+            description: Ви можете висунути до %{limit} пропозицій.
+          title: 'Голосування регулюється наступними правилами:'
           vote_limit:
             description: Ви можете проголосувати до %{limit} пропозицій.
             left: Залишилось
-            title: У вас є %{limit} голосів для того, щоб їх розподілити
             votes: Голоси
     resource_links:
       included_proposals:
-        proposal_projects: 'Пропозиція, яка є в таких проектах:'
-        proposal_results: 'Пропозиція, яка є в таких підсумках:'
+        proposal_projects: 'Пропозиція є в таких проектах:'
+        proposal_results: 'Пропозиція є в таких підсумках:'

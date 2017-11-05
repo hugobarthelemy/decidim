@@ -22,10 +22,12 @@ eu:
             attachments_allowed: Baimendu eranskinak
             comments_enabled: Iruzkinak gaituta
             geocoding_enabled: Geokodeketa gaituta
+            maximum_votes_per_proposal: Proposamen bakoitzeko gehienezko botoak
             new_proposal_help_text: Laguntza-testua proposamen bat sortzean
             official_proposals_enabled: Proposamen ofizialak gaituta
             proposal_answering_enabled: Erantzuna aktibatutako proposamenei
-            vote_limit: Boto-muga
+            proposal_limit: Proposamenaren muga erabiltzaile bakoitzeko
+            vote_limit: Erabiltzaile bakoitzari botoa emateko muga
           step:
             announcement: Oharra
             comments_blocked: Iruzkinak blokeatuta
@@ -87,6 +89,9 @@ eu:
             scope: Esparrua
             state: Egoera
             title: Titulua
+            votes: Euskarriak
+      new:
+        limit_reached: Ezin duzu proposamen berririk sortu muga gainditu zenuenetik.
       proposal_votes:
         create:
           error: Erroreak gertatu dira proposamena bozkatzean.
@@ -125,8 +130,8 @@ eu:
           view_proposal: Ikusi proposamena
         linked_proposals:
           proposal_votes:
-            one: <span class="card--list__data__number">1</span>boto
-            other: <span class="card--list__data__number">%{count}</span>boto
+            one: proiektuaren alde egin
+            other: euskarriak
         new:
           attachment_legend: "(Aukerakoa) Gehitu eranskin bat"
           back: Atzera
@@ -142,10 +147,12 @@ eu:
           view_proposal: Ikusi proposamena
         show:
           proposal_accepted_reason: 'Proposamen hau onartu da arrazoi hauengatik:'
+          proposal_in_evaluation_reason: Proposamen hau ebaluatzen ari da
           proposal_rejected_reason: 'Proposamen hau baztertu da arrazoi hauengatik:'
           report: Salatu
         vote_button:
           already_voted: Bozkatuta duzu
+          maximum_votes_reached: Vote muga iritsi da
           no_votes_remaining: Ez da gelditzen botorik
           vote: Proiektuaren alde egin
           votes_blocked: Bozketa desaktibatu da
@@ -153,12 +160,16 @@ eu:
           count:
             one: SOSTENGU
             other: SOSTENGU
-        votes_limit:
+        voting_rules:
+          maximum_votes_per_proposal:
+            description: Proposamen bakoitzak gehienez %{limit} boto jaso ditzake.
+          proposal_limit:
+            description: '%{limit} proposamen sortu ditzakezu.'
+          title: 'Botoak honako arauak ditu:'
           vote_limit:
             description: '%{limit} proposamenari bozkatu ahal zaizkio.'
             left: Emateke
-            title: Gehienez, %{limit} boto eman ditzakezu
-            votes: Boto
+            votes: Euskarriak
     resource_links:
       included_proposals:
         proposal_projects: 'Proiektu hauetatik sortutako proposamena:'

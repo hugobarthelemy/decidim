@@ -75,7 +75,6 @@ it:
       create:
         error: Si è verificato un errore nella creazione dell'autorizzazione.
         success: Sei stato autorizzato con successo.
-      current_participatory_processes: dai un'occhiata ai processi attuali
       first_login:
         actions:
           decidim/dummy_authorization_handler: Verifica rispetto all'autorizzazione esempio
@@ -85,6 +84,7 @@ it:
         authorize: Invia
         authorize_with: Verifica con %{authorizer}
       skip_verification: Se preferisci puoi saltare questa verifica per il momento e %{link}
+      start_exploring: iniziare a esplorare
     core:
       actions:
         unauthorized: Non sei autorizzato a eseguire questa azione
@@ -156,6 +156,7 @@ it:
     filters:
       linked_classes:
         all: Tutto
+        dummyresource: Risorse fittizie
         meeting: Incontri
         project: Progetti
         proposal: Proposte
@@ -269,7 +270,7 @@ it:
           Se non desideri accettare l'invito, ignora questa email.<br /> Il tuo account non verrà creato finché non accedi al link precedente e imposti la tua password.
         invited_you_as_admin: "%{invited_by} ti ha invitato come amministratore di %{application}. Puoi accettarla tramite il collegamento qui sotto."
         someone_invited_you: Qualcuno ti ha invitato a %{application}. Puoi accettarla tramite il collegamento qui sotto.
-        you_are_now_admin: Ora sei un amministratore
+        someone_invited_you_as_admin: Qualcuno ti ha invitato come amministratore di %{application}, puoi accettarlo tramite il collegamento qui sotto.
       invite_admin:
         subject: Sei stato invitato per la gestione della sezione relativa all'organizzazione %{organization}
       invite_collaborator:
@@ -353,10 +354,6 @@ it:
       hero:
         participate: Partecipa
         welcome: Benvenuto su %{organization}!
-      highlighted_processes:
-        active_processes: Processi attivi
-        active_step: Fase attiva
-        see_all_processes: Vedi tutti i processi
       statistics:
         answers_count: risposte
         comments_count: Commenti

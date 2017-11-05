@@ -75,7 +75,6 @@ es:
       create:
         error: Se ha producido un error al crear la autorización.
         success: Has sido autorizado/a correctamente.
-      current_participatory_processes: echar un vistazo a los procesos actuales
       first_login:
         actions:
           decidim/dummy_authorization_handler: Verificar ejemplo autorización en contra de la
@@ -85,6 +84,7 @@ es:
         authorize: Enviar
         authorize_with: Verificarme con %{authorizer}
       skip_verification: Puedes saltarte este paso por ahora y %{link}
+      start_exploring: empezar a explorar
     core:
       actions:
         unauthorized: No tienes permiso para realizar esta acción.
@@ -156,6 +156,7 @@ es:
     filters:
       linked_classes:
         all: Todas
+        dummyresource: Recursos ficticios
         meeting: Encuentros
         project: Proyectos
         proposal: Propuestas
@@ -270,7 +271,7 @@ es:
           Tu cuenta no se creará hasta que accedas al enlance de abajo y escojas tu contraseña.
         invited_you_as_admin: "%{invited_by} te ha invitado como administrador de %{application}. Puedes aceptarlo a través del siguiente enlace."
         someone_invited_you: Alguien te ha invitado a %{application}. Puedes aceptar la invitación a través del siguiente enlace.
-        you_are_now_admin: Ahora eres un administrador
+        someone_invited_you_as_admin: Alguien te ha invitado como administrador de %{application}, puedes aceptar a través del siguiente enlace.
       invite_admin:
         subject: Has sido invitado para gestionar %{organization}
       invite_collaborator:
@@ -354,10 +355,6 @@ es:
       hero:
         participate: Participar
         welcome: Bienvenido a %{organization}!
-      highlighted_processes:
-        active_processes: Procesos activos
-        active_step: Fase activa
-        see_all_processes: Ver todos los procesos
       statistics:
         answers_count: Respuestas
         comments_count: Comentarios

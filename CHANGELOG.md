@@ -2,28 +2,71 @@
 
 ## [Unreleased](https://github.com/decidim/decidim/tree/HEAD)
 
+**Added**:
+
+- **decidim-core**: Add view hooks so external engines can extend the homepage and other sections with their own code [\#2114](https://github.com/decidim/decidim/pull/2114)
+
+**Changed**:
+
+- **decidim-admin**: Replace url to visit_url moderation admin [\#2129](https://github.com/decidim/decidim/pull/2129)
+
+## [v0.7.1](https://github.com/decidim/decidim/tree/v0.7.1) (2017-10-26)
+[Full Changelog](https://github.com/decidim/decidim/compare/v0.7.0...v0.7.1)
+
+**Fixed**:
+
+- **decidim**: Fixed app generators [\#2119](https://github.com/decidim/decidim/pull/2119)
+
+## [v0.7.0](https://github.com/decidim/decidim/tree/v0.7.0) (2017-10-25)
+[Full Changelog](https://github.com/decidim/decidim/compare/v0.6.8...v0.7.0)
+
 **Added**
 
 - **decidim**: Available authorization handlers are added to the sample organization automatically when seeding. [\#1978](https://github.com/decidim/decidim/pull/1978)
+- **decidim-admin**: Let admins customize the Call To Action homepage button text and URL [\#2053](https://github.com/decidim/decidim/pull/2053)
+- **decidim-assemblies**: Hide the link to Assemblies from the main menu if no assemblies are published [\#2074](https://github.com/decidim/decidim/pull/2074)
 - **decidim-core**: Show a disabled "Follow" button to anonymous users (not logged in) with a prompt to sign in [\#1903](https://github.com/decidim/decidim/pull/1903)
 - **decidim-core**: Adds an option to the initializer file to enable/disable header snippets (`true` by default) [\#1923](https://github.com/decidim/decidim/pull/1923)
 - **decidim-core**: Adds an option to configure the maximum file size for avatar images [\#1969](https://github.com/decidim/decidim/pull/1969)
 - **decidim-core**: Hides the "Mark all as read" notifications button when no notifications are found [\#1948](https://github.com/decidim/decidim/pull/1948)
+- **decidim-core**: Add fields to customize the Call To Action homepage button text and URL [\#2053](https://github.com/decidim/decidim/pull/2053)
+- **decidim-core**: Add a new Excel exporter that exports to native XLS format [\#2099](https://github.com/decidim/decidim/pull/2099)
 - **decidim-meetings**: Participatory admins can invite users to join a meeting. [\#1879](https://github.com/decidim/decidim/pull/1879)
+- **decidim-participatory_processes**: Hide the link to Processes from the main menu if no processes are published [\#2074](https://github.com/decidim/decidim/pull/2074)
 - **decidim-proposals**: Show votes in the proposals table in admin when votes are enabled [\#2011](https://github.com/decidim/decidim/pull/2011)
+- **decidim-proposals**: Allow setting the maximum amount of votes a proposal can receive [\#2054](https://github.com/decidim/decidim/pull/2054).
 
 **Changed**
 
 - **decidim**: URLs now use the participatory space slug instead of the ID, both in the public pages and in the admin. Old routes using the space IDs now redirect to the ones using the slug. [\#1842](https://github.com/decidim/decidim/pull/1842)
 - **decidim**: `bin/rails generate decidim:demo` is no longer available in generated applications. Use the `--demo` flag when generating your application or do the change manually if you want to use the "demo" authorization handler. [\#1978](https://github.com/decidim/decidim/pull/1978)
+- **decidim-admin**: Organization settings form is now split in two: connfiguration and appearance [\#2041](https://github.com/decidim/decidim/pull/2041)
 - **decidim-core**: Changes some texts in the homepage ("How do I take part in a process?" section) [\#1947](https://github.com/decidim/decidim/pull/1947)
+- **decidim-results**: This gem is no longer included inside the `decidim` gem and it has its own repository. [\#1926](https://github.com/decidim/decidim/pull/1926)
 - **decidim-core**: Authorization handlers now must be specified as strings. To migrate, change `config.authorization_handlers = [MyHandler]` to `config.authorization_handlers = ["MyHandler"]`. [\#2016](https://github.com/decidim/decidim/pull/2016)
-- **decidim-results**: Results description is truncated to 100 chars on the public list view [\#2008](https://github.com/decidim/decidim/pull/2008)
+- **decidim-proposals**: Change proposal answer callouts so they match their real state [\#2025](https://github.com/decidim/decidim/pull/2025)
 
 **Fixed**
 
+- **decidim-admin**: Reference prefix was not being updated in the admin form [\#2041](https://github.com/decidim/decidim/pull/2041)
 - **decidim-core**: Handle nil resources on static maps (errors were caused by search engine spiders) [\#1936](https://github.com/decidim/decidim/pull/1936)
+- **decidim-core**: Homepage blocks were not distinguishable when statistics were hidden [\#2064](https://github.com/decidim/decidim/pull/2064)
+- **decidim-core**: Menu was not being properly highlighted when users were logged in with non-default locales [\#2095](https://github.com/decidim/decidim/pull/2095)
+- **decidim-core**: Don't autocomplete the profile's password fields so uptating it doesn't break. [\#2108](https://github.com/decidim/decidim/pull/2108)
+- **decidim-comments**: Fix a bug sending email notifications when a comment is created [\#2036](https://github.com/decidim/decidim/pull/2036)
+- **decidim-participatory-processes**: Invited moderators couldn't access the process admin panel [\#2020](https://github.com/decidim/decidim/pull/2020)
 - **decidim-proposals**: Do not count hidden proposals on stats [\#1988](https://github.com/decidim/decidim/pull/1988)
+
+**Removed**
+
+- **decidim-system**: Removed button to delete organizations, as this is not implemented [\#2067](https://github.com/decidim/decidim/pull/2067)
+
+## [v0.6.8](https://github.com/decidim/decidim/tree/v0.6.8) (2017-10-17)
+[Full Changelog](https://github.com/decidim/decidim/compare/v0.6.7...v0.6.8)
+
+**Fixed**
+
+- **decidim-admin**: Fix impersonation being disallowed when there's another user impersonating [\#2047](https://github.com/decidim/decidim/pull/2047)
 
 ## [v0.6.7](https://github.com/decidim/decidim/tree/v0.6.7) (2017-10-09)
 [Full Changelog](https://github.com/decidim/decidim/compare/v0.6.6...v0.6.7)

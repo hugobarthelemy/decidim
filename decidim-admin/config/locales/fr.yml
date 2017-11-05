@@ -17,16 +17,19 @@ fr:
         subject: Objet
       organization:
         default_locale: Langue par défaut
+        name: Nom
+        reference_prefix: Préfixe de référence
+      organization_appearance:
+        cta_button_path: Chemin du bouton d'Appel à action
+        cta_button_text: Texte du bouton d'Appel à action
         description: Description
         favicon: Icône
-        header_snippets: Elements à rajouter entre les balises <head></head>
+        header_snippets: Eléments à ajouter entre les balises <head></head>
         homepage_image: Image de la page d'accueil
         logo: Logo
-        name: Nom
         official_img_footer: Logo officiel - pied de page
         official_img_header: Logo officiel - barre de navigation
-        official_url: Url officielle de l'organisation
-        reference_prefix: Préfixe de référence
+        official_url: URL officielle de l'organisation
         show_statistics: Afficher les statistiques
         welcome_text: Texte de bienvenue
       scope:
@@ -128,7 +131,7 @@ fr:
           success: Catégorie mise à jour avec succès.
       dashboard:
         show:
-          welcome: Bienvenue dans le nouveau panneau d’administration Decidim.
+          welcome: Bienvenue dans le panneau d'administration de Decidim.
       exports:
         export_as: "%{name} comme %{export_format}"
         notice: Votre exportation est en cours. Vous recevrez un e-mail quand elle sera terminée.
@@ -205,6 +208,8 @@ fr:
             promote: Transformer
       menu:
         admins: Administrateurs
+        appearance: Apparence
+        configuration: Configuration
         dashboard: Tableau de bord
         managed_users: Utilisateurs représentés
         newsletters: Bulletins d'information (newsletter)
@@ -312,10 +317,8 @@ fr:
           title: Modifier l'organisation
           update: Mettre à jour
         form:
-          current_image: Image actuelle
           facebook: Facebook
           github: GitHub
-          header_snippets_help: Utilisez ce champ pour ajouter des éléments entre les balises <head> </head> HTML. L'utilisation la plus courante de champs consiste à intégrer des services tiers nécessitant du JavaScript ou du CSS supplémentaire. Vous pouvez aussi l'utiliser pour ajouter des méta-tags supplémentaires au code HTML. Notez que cela ne fonctionnera que dans sur les pages publiques, et non dans la section admin.
           instagram: Instagram
           social_handlers: Social
           twitter: Twitter
@@ -324,6 +327,15 @@ fr:
         update:
           error: Erreur lors de la mise à jour de cette organisation.
           success: Organisation mise à jour avec succès.
+      organization_appearance:
+        edit:
+          update: Mettre à jour
+        form:
+          cta_button_path_help: 'Vous pouvez remplacer le lien vers lequel renvoie le bouton d''Appel à action de la page d''accueil. Utilisez ici des chemins partiels et non des URL complets. Accepte les lettres, les chiffres, les tirets et les barres obliques, et doit commencer par une lettre. Le bouton d''Appel à action apparaît sur la page d''accueil entre le texte de bienvenue et la description. Exemple: %{url}'
+          cta_button_text_help: Vous pouvez remplacer le texte du bouton d'Appel à action dans la page d'accueil pour chaque langue disponible dans votre organisation. Si elle n'est pas définie, la valeur par défaut sera utilisée. Le bouton d'Appel à action apparaît sur la page d'accueil entre le texte de bienvenue et la description.
+          header_snippets_help: Utilisez ce champ pour ajouter des éléments entre les balises HTML <head> </head>. L'utilisation la plus courante de champs consiste à intégrer des services tiers nécessitant du JavaScript ou du CSS supplémentaire. Vous pouvez aussi l'utiliser pour ajouter des méta-tags supplémentaires au code HTML. Notez que cela ne fonctionnera que dans sur les pages publiques, et non dans la section admin.
+          homepage_appearance_title: Modifier l'apparence de la page d'accueil
+          layout_appearance_title: Modifier l’aspect de la mise en page
       scope_types:
         create:
           error: Une erreur s'est produite lors de la création d'un nouveau type de zone d'application.
@@ -438,6 +450,7 @@ fr:
             reportable: Signalable
             reported_content_url: Contenu d'une URL
             reports: Signalements
+            visit_url: URL de visite
   errors:
     messages:
       invalid_json: JSON non valide

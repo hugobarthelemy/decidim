@@ -11,7 +11,6 @@ module Decidim
       include Paginable
 
       helper_method :geocoded_proposals
-
       before_action :authenticate_user!, only: [:new, :create]
 
       def index

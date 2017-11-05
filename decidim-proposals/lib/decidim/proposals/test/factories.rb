@@ -34,6 +34,18 @@ FactoryGirl.define do
       end
     end
 
+    trait :with_proposal_limit do
+      transient do
+        proposal_limit 1
+      end
+
+      settings do
+        {
+          proposal_limit: proposal_limit
+        }
+      end
+    end
+
     trait :with_votes_blocked do
       step_settings do
         {
@@ -68,6 +80,14 @@ FactoryGirl.define do
         }
       end
     end
+
+    trait :with_maximum_votes_per_proposal do
+      settings do
+        {
+          maximum_votes_per_proposal: 1
+        }
+      end
+    end
   end
 
   factory :proposal, class: Decidim::Proposals::Proposal do
@@ -82,6 +102,11 @@ FactoryGirl.define do
       author nil
     end
 
+    trait :evaluating do
+      state "evaluating"
+      answered_at { Time.current }
+    end
+
     trait :accepted do
       state "accepted"
       answered_at { Time.current }
@@ -89,8 +114,11 @@ FactoryGirl.define do
 
     trait :rejected do
       state "rejected"
-      answer { Decidim::Faker::Localized.sentence }
       answered_at { Time.current }
+    end
+
+    trait :with_answer do
+      answer { Decidim::Faker::Localized.sentence }
     end
   end
 

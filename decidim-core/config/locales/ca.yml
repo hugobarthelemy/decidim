@@ -75,7 +75,6 @@ ca:
       create:
         error: S'ha produït un error en crear l'autorització.
         success: Has estat autoritzat/da correctament.
-      current_participatory_processes: fer una ullada als processos actuals
       first_login:
         actions:
           decidim/dummy_authorization_handler: Verificar contra l'exemple d'autorització
@@ -85,6 +84,7 @@ ca:
         authorize: Enviar
         authorize_with: Verificar-me amb %{authorizer}
       skip_verification: Pots saltar-te aquest pas per ara i %{link}
+      start_exploring: començar a explorar
     core:
       actions:
         unauthorized: No tens permís per realitzar aquesta acció
@@ -156,6 +156,7 @@ ca:
     filters:
       linked_classes:
         all: Tots
+        dummyresource: Recursos de prova
         meeting: Trobades
         project: Projectes
         proposal: propostes
@@ -270,7 +271,7 @@ ca:
           El teu compte no es crearà fins que no accedeixis a l'enllaç de sota i triïs la teva contrasenya.
         invited_you_as_admin: "%{invited_by} t'ha convidat com a administrador de %{application}. Pots acceptar-ho a través de l'enllaç següent."
         someone_invited_you: Algú t'ha convidat a %{application}. Pots acceptar-ho a través de l'enllaç següent.
-        you_are_now_admin: Ara ets administrador
+        someone_invited_you_as_admin: Algú t'ha convidat com a administrador de %{application}, pots acceptar-lo a través de l'enllaç següent.
       invite_admin:
         subject: Has estat convidat a gestionar %{organization}
       invite_collaborator:
@@ -354,10 +355,6 @@ ca:
       hero:
         participate: Participa
         welcome: Benvingut a %{organization}!
-      highlighted_processes:
-        active_processes: Processos actius
-        active_step: Fase activa
-        see_all_processes: Veure tots els processos
       statistics:
         answers_count: Respostes
         comments_count: Comentaris

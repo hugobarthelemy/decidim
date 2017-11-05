@@ -75,7 +75,6 @@ pl:
       create:
         error: Podczas tworzenia autoryzacji wystąpił błąd.
         success: Jesteś pomyślnie autoryzowany/autoryzowana.
-      current_participatory_processes: przyjrzyj się obecnym procesom
       first_login:
         actions:
           decidim/dummy_authorization_handler: Zwróć uwagę na przykładowe uprawnienia
@@ -85,6 +84,7 @@ pl:
         authorize: Wysłać
         authorize_with: Zweryfikuj za pomocą %{authorizer}
       skip_verification: Możesz to pominąć teraz i %{link}
+      start_exploring: rozpocznij zwiedzanie
     core:
       actions:
         unauthorized: Nie masz uprawnień do wykonywania tej czynności
@@ -156,6 +156,7 @@ pl:
     filters:
       linked_classes:
         all: Wszystkie
+        dummyresource: Dummy zasobów
         meeting: Spotkania
         project: Projekty
         proposal: Propozycje
@@ -269,7 +270,7 @@ pl:
           Jeśli nie chcesz zaakceptować zaproszenia, zignoruj ​​ten e-mail.<br /> Twoje konto nie zostanie utworzone, dopóki nie dojdziesz do powyższego linku i ustaw swojego hasła.
         invited_you_as_admin: "%{invited_by} zaprosił Cię jako administrator o numerze %{application}. Możesz to zaakceptować za pomocą poniższego linku."
         someone_invited_you: Ktoś zaprosił Cię do %{application}. Możesz to zaakceptować za pomocą poniższego linku.
-        you_are_now_admin: Jesteś teraz administratorem
+        someone_invited_you_as_admin: Ktoś zaprosił Cię jako administrator o numerze %{application}, możesz go zaakceptować za pomocą poniższego linku.
       invite_admin:
         subject: Zaproszono Cię do zarządzania %{organization}
       invite_collaborator:
@@ -353,10 +354,6 @@ pl:
       hero:
         participate: Uczestniczyć
         welcome: Witamy w %{organization}!
-      highlighted_processes:
-        active_processes: Aktywne procesy
-        active_step: Aktywny krok
-        see_all_processes: Zobacz wszystkie procesy
       statistics:
         answers_count: Odpowiedzi
         comments_count: Komentarze

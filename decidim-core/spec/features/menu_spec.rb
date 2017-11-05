@@ -20,10 +20,8 @@ describe "Menu", type: :feature do
   it "renders the default main menu" do
     within ".main-nav" do
       expect(page).to \
-        have_selector("li", count: 4) &
+        have_selector("li", count: 2) &
         have_link("Home", href: "/") &
-        have_link("Processes", href: "/processes") &
-        have_link("Assemblies", href: "/assemblies") &
         have_link("More information", href: "/pages")
     end
   end
@@ -54,6 +52,28 @@ describe "Menu", type: :feature do
 
       it "preserves the active option" do
         expect(page).to have_selected_option("More information")
+      end
+    end
+  end
+
+  context "with a user logged in and multiple languages" do
+    let!(:user) { create :user, :confirmed, organization: organization }
+
+    before do
+      login_as user, scope: :user
+
+      visit decidim.root_path
+
+      within_language_menu do
+        click_link "Català"
+      end
+    end
+
+    it "works with multiple languages" do
+      visit decidim.root_path
+
+      within ".main-nav" do
+        expect(page).to have_selected_option("Inici")
       end
     end
   end

@@ -22,10 +22,12 @@ it:
             attachments_allowed: Consenti gli allegati
             comments_enabled: Commenti abilitati
             geocoding_enabled: Geocoding abilitato
+            maximum_votes_per_proposal: Numero massimo di voti per proposta
             new_proposal_help_text: Nuovo testo di aiuto per la proposta
             official_proposals_enabled: Proposte ufficiali abilitate
             proposal_answering_enabled: Risposta Proposte abilitata
-            vote_limit: Numero max di proposte votabili
+            proposal_limit: Limite di proposta per utente
+            vote_limit: Limite di voto per utente
           step:
             announcement: Annuncio
             comments_blocked: Commenti bloccati
@@ -87,6 +89,9 @@ it:
             scope: Visibilità
             state: Stato
             title: Titolo
+            votes: Voti
+      new:
+        limit_reached: Non è possibile creare nuove proposte dal momento che hai superato il limite.
       proposal_votes:
         create:
           error: Ci sono stati errori durante la votazione della proposta.
@@ -125,8 +130,8 @@ it:
           view_proposal: Visualizza proposta
         linked_proposals:
           proposal_votes:
-            one: <span class="card--list__data__number">1</span>voto
-            other: <span class="card--list__data__number">%{count}</span>voti
+            one: votazione
+            other: voti
         new:
           attachment_legend: "(Facoltativo) Aggiungere un allegato"
           back: Indietro
@@ -142,10 +147,12 @@ it:
           view_proposal: Visualizza la proposta
         show:
           proposal_accepted_reason: 'Questa proposta è stata accettata perché:'
+          proposal_in_evaluation_reason: Questa proposta è in fase di valutazione
           proposal_rejected_reason: 'Questa proposta è stata rifiutata perché:'
           report: Report
         vote_button:
           already_voted: Già votata
+          maximum_votes_reached: Il limite di voto raggiunto
           no_votes_remaining: Sono finite le votazioni possibili
           vote: Vota
           votes_blocked: Votazioni disabilitate
@@ -153,11 +160,15 @@ it:
           count:
             one: VOTO
             other: VOTI
-        votes_limit:
+        voting_rules:
+          maximum_votes_per_proposal:
+            description: Ogni proposta può ricevere un massimo di %{limit} voti.
+          proposal_limit:
+            description: Puoi creare fino a %{limit} proposte.
+          title: 'Il voto è soggetto alle seguenti regole:'
           vote_limit:
             description: Puoi votare fino a %{limit} proposte.
             left: Restano
-            title: Hai ancora %{limit} voti
             votes: Voti
     resource_links:
       included_proposals:

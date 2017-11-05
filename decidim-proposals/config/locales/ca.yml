@@ -22,10 +22,12 @@ ca:
             attachments_allowed: Permetre arxius adjunts
             comments_enabled: Comentaris habilitats
             geocoding_enabled: Geocodificació habilitada
+            maximum_votes_per_proposal: Vots màxims per proposta
             new_proposal_help_text: Text d'ajuda al crear una nova proposta
             official_proposals_enabled: Propostes oficials habilitades
             proposal_answering_enabled: Resposta oficial a propostes activades
-            vote_limit: Límit de vot
+            proposal_limit: Límit de propostes per usuari
+            vote_limit: Límit de vots per usuari
           step:
             announcement: Avís
             comments_blocked: Comentaris bloquejats
@@ -87,6 +89,9 @@ ca:
             scope: Àmbit
             state: Estat
             title: Títol
+            votes: Vots
+      new:
+        limit_reached: No pots crear noves propostes ja que has superat el límit.
       proposal_votes:
         create:
           error: Hi ha hagut errors en votar la proposta.
@@ -125,8 +130,8 @@ ca:
           view_proposal: Veure proposta
         linked_proposals:
           proposal_votes:
-            one: <span class="card--list__data__number">1</span>suport
-            other: <span class="card--list__data__number">%{count}</span>suports
+            one: suport
+            other: suports
         new:
           attachment_legend: "(Opcional) Afegiu un fitxer adjunt"
           back: Enrere
@@ -142,10 +147,12 @@ ca:
           view_proposal: Veure proposta
         show:
           proposal_accepted_reason: 'Aquesta proposta ha estat acceptada perquè:'
+          proposal_in_evaluation_reason: S'està avaluant aquesta proposta
           proposal_rejected_reason: 'Aquesta proposta ha estat rebutjada perquè:'
           report: Informe
         vote_button:
           already_voted: Ja has votat
+          maximum_votes_reached: S'ha arribat al límit de vots
           no_votes_remaining: No hi ha suports restants
           vote: Donar suport
           votes_blocked: Recollida de suports desactivada
@@ -153,12 +160,16 @@ ca:
           count:
             one: SUPORT
             other: SUPORTS
-        votes_limit:
+        voting_rules:
+          maximum_votes_per_proposal:
+            description: Cada proposta pot rebre un màxim de %{limit} vots.
+          proposal_limit:
+            description: Pots crear fins a %{limit} propostes.
+          title: 'La votació es regeix per les següents normes:'
           vote_limit:
             description: Pots votar fins a %{limit} propostes.
             left: Restant
-            title: Té %{limit} suports a distribuir
-            votes: Suports
+            votes: Vots
     resource_links:
       included_proposals:
         proposal_projects: 'Proposta formulada en aquests projectes:'

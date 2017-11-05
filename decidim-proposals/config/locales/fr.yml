@@ -2,7 +2,7 @@ fr:
   activemodel:
     attributes:
       proposal:
-        body: Corps de texte
+        body: Corps du texte
         category_id: Catégorie
         scope_id: Zone d'application
         title: Titre
@@ -22,10 +22,12 @@ fr:
             attachments_allowed: Autoriser les pièces jointes
             comments_enabled: Commentaires activés
             geocoding_enabled: Géocodage activé
+            maximum_votes_per_proposal: Nombre maximum de votes par proposition
             new_proposal_help_text: Nouveau texte d'aide à la proposition
             official_proposals_enabled: Propositions officielles activées
             proposal_answering_enabled: '"Réponses aux propositions" activé'
-            vote_limit: Limite de vote
+            proposal_limit: Maximum de propositions par utilisateur
+            vote_limit: Nombre maximum de votes par utilisateur
           step:
             announcement: Annonce
             comments_blocked: Commentaires bloqués
@@ -87,6 +89,9 @@ fr:
             scope: Zone d'application
             state: Etat
             title: Titre
+            votes: Votes
+      new:
+        limit_reached: Vous ne pouvez pas créer de nouvelles propositions car vous avez dépassé le nombre autorisé.
       proposal_votes:
         create:
           error: Des erreurs se sont produites lors du vote de la proposition.
@@ -125,8 +130,8 @@ fr:
           view_proposal: Voir la proposition
         linked_proposals:
           proposal_votes:
-            one: <span class="card--list__data__number">1</span>vote
-            other: <span class="card--list__data__number">%{count}</span>votes
+            one: voter
+            other: votes
         new:
           attachment_legend: "(Facultatif) Ajouter une pièce jointe"
           back: Retour
@@ -142,10 +147,12 @@ fr:
           view_proposal: Voir la proposition
         show:
           proposal_accepted_reason: 'Cette proposition a été retenue parce que :'
+          proposal_in_evaluation_reason: Cette proposition est en cours d'évaluation
           proposal_rejected_reason: 'Cette proposition a été refusée parce que:'
           report: Signaler
         vote_button:
           already_voted: Déjà voté
+          maximum_votes_reached: Nombre maximum de votes atteint
           no_votes_remaining: Aucun vote restant
           vote: Voter
           votes_blocked: Votes désactivés
@@ -153,11 +160,15 @@ fr:
           count:
             one: VOTE
             other: VOTES
-        votes_limit:
+        voting_rules:
+          maximum_votes_per_proposal:
+            description: Chaque proposition peut recevoir un maximum de %{limit} votes.
+          proposal_limit:
+            description: Vous pouvez créer jusqu'à %{limit} propositions.
+          title: 'Le vote est soumis aux règles suivantes:'
           vote_limit:
-            description: Vous pouvez voter jusqu'à %{limit} propositions.
+            description: Vous pouvez voter pour %{limit} propositions au maximum.
             left: Restant
-            title: Vous disposez de %{limit} votes à distribuer
             votes: Votes
     resource_links:
       included_proposals:

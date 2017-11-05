@@ -17,16 +17,19 @@ pl:
         subject: Przedmiot
       organization:
         default_locale: Domena domyślna
+        name: Nazwa
+        reference_prefix: Prefiks referencyjny
+      organization_appearance:
+        cta_button_path: Ścieżka przycisku wezwania do działania
+        cta_button_text: Tekst przycisku przycisku wezwania do działania
         description: Opis
         favicon: Ikona
         header_snippets: Fragmenty nagłówków
         homepage_image: Obraz strony głównej
         logo: Logo
-        name: Nazwa
         official_img_footer: Oficjalny stopka logo
         official_img_header: Oficjalny nagłówek logo
-        official_url: Oficjalna organizacja url
-        reference_prefix: Prefiks referencyjny
+        official_url: Oficjalna witryna organizacji
         show_statistics: Pokaż statystyki
         welcome_text: Tekst powitalny
       scope:
@@ -128,7 +131,7 @@ pl:
           success: Kategoria została zaktualizowana.
       dashboard:
         show:
-          welcome: Witamy w nowym Decidim Panel Admin.
+          welcome: Witamy w Decidim Admin Panel.
       exports:
         export_as: "%{name} jako %{export_format}"
         notice: Twój eksport jest obecnie w toku. Po jego zakończeniu otrzymasz e-maila.
@@ -205,6 +208,8 @@ pl:
             promote: Promować
       menu:
         admins: Administratorzy
+        appearance: Wygląd
+        configuration: Konfiguracja
         dashboard: Deska rozdzielcza
         managed_users: Zarządzane użytkownicy
         newsletters: Biuletyny
@@ -312,10 +317,8 @@ pl:
           title: Edytuj organizację
           update: Aktualizacja
         form:
-          current_image: Aktualny obraz
           facebook: Facebook
           github: GitHub
-          header_snippets_help: Użyj tego pola, aby dodać elementy do głowicy HTML. Najczęstszym sposobem jest zintegrowanie usług innych firm, które wymagają dodatkowego kodu JavaScript lub CSS. Można również użyć go do dodawania dodatkowych znaczników meta do HTML. Należy zauważyć, że będzie to widoczne tylko na stronach publicznych, a nie w sekcji administracyjnej.
           instagram: Instagram
           social_handlers: Społeczny
           twitter: Świergot
@@ -324,6 +327,15 @@ pl:
         update:
           error: Podczas aktualizowania tej organizacji wystąpił błąd.
           success: Organizacja została zaktualizowana.
+      organization_appearance:
+        edit:
+          update: Aktualizuj
+        form:
+          cta_button_path_help: 'Możesz zastąpić lokalizację, w której przycisk Do połączenia z działaniem na łącza do strony głównej. Użyj częściowych ścieżek, a nie pełnych adresów URL. Akceptuje litery, liczby, myślniki i ukośniki, i muszą zaczynać się od litery. Przycisk Zadzwoń do Działania zostanie wyświetlony na stronie głównej między tekstem powitalnym a opisem. Przykład: %{url}'
+          cta_button_text_help: Można zastąpić tekst przycisku Żądanie do działania na stronie głównej dla każdego dostępnego języka w organizacji. Jeśli nie zostanie ustawiona, zostanie użyta wartość domyślna. Przycisk Zadzwoń do Działania zostanie wyświetlony na stronie głównej między tekstem powitalnym a opisem.
+          header_snippets_help: Użyj tego pola, aby dodać elementy do głowicy HTML. Najczęstszym sposobem jest zintegrowanie usług innych firm, które wymagają dodatkowego kodu JavaScript lub CSS. Można również użyć go do dodawania dodatkowych znaczników meta do HTML. Należy zauważyć, że będzie to widoczne tylko na stronach publicznych, a nie w sekcji administracyjnej.
+          homepage_appearance_title: Edytuj wygląd strony głównej
+          layout_appearance_title: Edytuj wygląd układu
       scope_types:
         create:
           error: Podczas tworzenia nowego typu zakresu wystąpił błąd.
@@ -438,6 +450,7 @@ pl:
             reportable: Zgłoszone
             reported_content_url: Zgłoszony URL treści
             reports: Raporty
+            visit_url: Odwiedź adres URL
   errors:
     messages:
       invalid_json: Nieprawidłowy JSON

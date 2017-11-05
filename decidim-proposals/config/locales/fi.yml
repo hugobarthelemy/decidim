@@ -22,10 +22,12 @@ fi:
             attachments_allowed: Salli liitteet
             comments_enabled: Kommentointi sallittu
             geocoding_enabled: Geokoodaus päällä
+            maximum_votes_per_proposal: Suurin äänimäärä ehdotusta kohden
             new_proposal_help_text: Uuden ehdotuksen ohjeteksti
             official_proposals_enabled: Viralliset ehdotukset sallittu
             proposal_answering_enabled: Ehdotuksiin vastaaminen sallittu
-            vote_limit: Äänestysrajoite
+            proposal_limit: Ehdotuksen raja käyttäjää kohden
+            vote_limit: Äänestysraja käyttäjää kohden
           step:
             announcement: Ilmoitus
             comments_blocked: Kommentointi estetty
@@ -87,6 +89,9 @@ fi:
             scope: Konteksti
             state: Tila
             title: Otsikko
+            votes: Äänet
+      new:
+        limit_reached: Et voi luoda uusia ehdotuksia, koska olet ylittänyt rajan.
       proposal_votes:
         create:
           error: Äänestettäessä ehdotusta tapahtui virhe.
@@ -125,8 +130,8 @@ fi:
           view_proposal: Näytä ehdotus
         linked_proposals:
           proposal_votes:
-            one: <span class="card--list__data__number">1</span>ääni
-            other: <span class="card--list__data__number">%{count}</span>ääntä
+            one: äänestä
+            other: äänet
         new:
           attachment_legend: "(Valinnainen) Lisää liite"
           back: Takaisin
@@ -142,10 +147,12 @@ fi:
           view_proposal: Näytä ehdotus
         show:
           proposal_accepted_reason: 'Tämä ehdotus on hyväksytty, koska:'
+          proposal_in_evaluation_reason: Tätä ehdotusta arvioidaan
           proposal_rejected_reason: 'Tämä ehdotus on hylätty, koska:'
           report: Ilmoita
         vote_button:
           already_voted: Jo äänestetty
+          maximum_votes_reached: Äänestysraja saavutettu
           no_votes_remaining: Ei ääniä jäljellä
           vote: Äänestä
           votes_blocked: Äänestys estetty
@@ -153,11 +160,15 @@ fi:
           count:
             one: ÄÄNI
             other: ÄÄNTÄ
-        votes_limit:
+        voting_rules:
+          maximum_votes_per_proposal:
+            description: Jokainen ehdotus saa enintään %{limit} ääntä.
+          proposal_limit:
+            description: Voit luoda enintään %{limit} ehdotusta.
+          title: 'Äänestykseen sovelletaan seuraavia sääntöjä:'
           vote_limit:
             description: Voit äänestää enintään %{limit} ehdotusta.
             left: Jäljellä
-            title: Sinulla on %{limit} ääntä käytettävänäsi
             votes: Äänet
     resource_links:
       included_proposals:

@@ -75,7 +75,6 @@ eu:
       create:
         error: Errorea gertatu da baimena sortzean.
         success: Baimendua izan zara zuzen.
-      current_participatory_processes: eman behakoa egungo prozesuei
       first_login:
         actions:
           decidim/dummy_authorization_handler: 'Egiaztatu baimen-adibidea honekin erkatuta:'
@@ -85,6 +84,7 @@ eu:
         authorize: Bidali
         authorize_with: 'Egiaztatu nire nortasuna honen bidez: %{authorizer}'
       skip_verification: Oraingoz, urrats hau egin gabe utzi dezakezu eta %{link}
+      start_exploring: Hasi esploratzen
     core:
       actions:
         unauthorized: Ez duzu baimenik ekintza honi heltzeko.
@@ -156,6 +156,7 @@ eu:
     filters:
       linked_classes:
         all: Guztiak
+        dummyresource: Dummy baliabideak
         meeting: Topaketa-zerrenda
         project: Proiektuak
         proposal: Proposamenak
@@ -269,7 +270,7 @@ eu:
           Nahi ez baduzu onartu gonbit hau, ez egin kasu mezu honi.<br />Zure kontua ez da sortuko beheko estekara jo eta zure pasahitza aukeratu arte.
         invited_you_as_admin: "%{invited_by} %{application} administratzaile gisa gonbidatu zaitu. Beheko estekan onartu dezakezu."
         someone_invited_you: Norbaitek %{application} gonbidatu zaitu. Beheko estekan onartu dezakezu.
-        you_are_now_admin: Orain administratzailea zara
+        someone_invited_you_as_admin: Norbaitek %{application} admin gisa gonbidatu zaitu, beheko estekan onartu dezakezu.
       invite_admin:
         subject: 'Gonbita jaso duzu erakunde hau kudeatzeko: %{organization}'
       invite_collaborator:
@@ -353,10 +354,6 @@ eu:
       hero:
         participate: Parte hartu
         welcome: Ongi etorri %{organization} erakundera!
-      highlighted_processes:
-        active_processes: Prozesu aktiboak
-        active_step: Fase gaitua
-        see_all_processes: Ikusi prozesu guztiak
       statistics:
         answers_count: Erantzunak
         comments_count: Iruzkinak

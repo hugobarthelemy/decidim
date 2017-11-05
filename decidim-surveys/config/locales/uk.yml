@@ -2,7 +2,7 @@ uk:
   activemodel:
     attributes:
       survey_answer:
-        body: Відповідь
+        body: Відповісти
       survey_question:
         mandatory: Обов’язкове поле
         question_type: Різновид
@@ -10,7 +10,7 @@ uk:
     features:
       surveys:
         actions:
-          answer: Відповідь
+          answer: Відповісти
         name: Опитування
         settings:
           global:
@@ -53,7 +53,7 @@ uk:
       surveys:
         answer:
           invalid: При відповідях на опитування сталися помилки.
-          success: На опитування успішно дано відповіді.
+          success: Опитування успішно пройдено.
         show:
           answer_survey:
             anonymous_user_message: <a href="%{sign_in_link}">Увійдіть за допомогою свого облікового запису</a> або <a href="%{sign_up_link}">зареєструйтесь</a>, щоб відповісти на опитування.
@@ -64,6 +64,6 @@ uk:
             body: Ви вже відповіли на це опитування.
             title: Опитування пройдене
           survey_closed:
-            body: Опитування закрите, дати відповіді на нього немає змоги.
-            title: Опитування закрите
+            body: Опитування завершене, дати відповіді на нього не можна.
+            title: Опитування завершене
           tos_agreement: Беручи участь у цьому опитуванні, ви приймаєте його умови використання

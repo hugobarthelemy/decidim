@@ -98,6 +98,7 @@ describe "Proposals", type: :feature do
 
           it "creates a new proposal" do
             visit_feature
+
             click_link "New proposal"
 
             within ".new_proposal" do
@@ -245,6 +246,41 @@ describe "Proposals", type: :feature do
           expect(page).to have_no_link("New proposal")
         end
       end
+
+      context "when the proposal limit is 1" do
+        let!(:feature) do
+          create(:proposal_feature,
+                 :with_creation_enabled,
+                 :with_proposal_limit,
+                 manifest: manifest,
+                 participatory_space: participatory_process)
+        end
+
+        it "allows the creation of a single new proposal" do
+          visit_feature
+
+          click_link "New proposal"
+          within ".new_proposal" do
+            fill_in :proposal_title, with: "Creating my first and only proposal"
+            fill_in :proposal_body, with: "This is my only proposal's body and I'm using it unwisely."
+            find("*[type=submit]").click
+          end
+
+          expect(page).to have_content("successfully")
+
+          visit_feature
+
+          click_link "New proposal"
+          within ".new_proposal" do
+            fill_in :proposal_title, with: "Creating my second and impossible proposal"
+            fill_in :proposal_body, with: "This is my only proposal's body and I'm using it unwisely."
+            find("*[type=submit]").click
+          end
+
+          expect(page).to have_no_content("successfully")
+          expect(page).to have_css(".callout.alert", text: "limit")
+        end
+      end
     end
   end
 
@@ -344,56 +380,68 @@ describe "Proposals", type: :feature do
 
     context "when a proposal has been linked in a result" do
       let(:proposal) { create(:proposal, feature: feature) }
-      let(:result_feature) do
-        create(:feature, manifest_name: :results, participatory_space: proposal.feature.participatory_space)
+      let(:dummy_feature) do
+        create(:feature, manifest_name: :dummy, participatory_space: proposal.feature.participatory_space)
       end
-      let(:result) { create(:result, feature: result_feature) }
+      let(:dummy_resource) { create(:dummy_resource, feature: dummy_feature) }
 
       before do
-        result.link_resources([proposal], "included_proposals")
+        dummy_resource.link_resources([proposal], "included_proposals")
       end
 
-      it "shows related results" do
+      it "shows related resources" do
         visit_feature
         click_link proposal.title
 
-        expect(page).to have_i18n_content(result.title)
+        expect(page).to have_i18n_content(dummy_resource.title)
       end
     end
 
-    context "when a proposal has been accepted" do
-      let!(:proposal) { create(:proposal, :accepted, feature: feature) }
+    context "when a proposal is in evaluation" do
+      let!(:proposal) { create(:proposal, :evaluating, :with_answer, feature: feature) }
 
-      it "shows a badge" do
+      it "shows a badge and an answer" do
         visit_feature
         click_link proposal.title
 
-        expect(page).to have_content("Accepted")
-        expect(page).to have_i18n_content(proposal.answer)
+        expect(page).to have_content("Evaluating")
+
+        within ".callout.secondary" do
+          expect(page).to have_content("This proposal is being evaluated")
+          expect(page).to have_i18n_content(proposal.answer)
+        end
       end
     end
 
     context "when a proposal has been rejected" do
-      let!(:proposal) { create(:proposal, :rejected, feature: feature) }
+      let!(:proposal) { create(:proposal, :rejected, :with_answer, feature: feature) }
 
       it "shows the rejection reason" do
         visit_feature
         click_link proposal.title
 
         expect(page).to have_content("Rejected")
-        expect(page).to have_i18n_content(proposal.answer)
+
+        within ".callout.warning" do
+          expect(page).to have_content("This proposal has been rejected")
+          expect(page).to have_i18n_content(proposal.answer)
+        end
       end
     end
 
     context "when a proposal has been accepted" do
-      let!(:proposal) { create(:proposal, :accepted, feature: feature) }
+      let!(:proposal) { create(:proposal, :accepted, :with_answer, feature: feature) }
 
       it "shows the acceptance reason" do
         visit_feature
         click_link proposal.title
 
         expect(page).to have_content("Accepted")
-        expect(page).to have_i18n_content(proposal.answer)
+
+        within ".callout.success" do
+          expect(page).to have_content("This proposal has been accepted")
+          expect(page).to have_i18n_content(proposal.answer)
+        end
       end
     end
 
